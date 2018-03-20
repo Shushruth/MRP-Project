@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<h3>ProductionRuns</h3>
+<div>
+    <a *ngFor="let prns of productionruns" [routerLink]="['/prun-detail', prns.production_run_id]">
+        <div class="productiorun">
+            {{prns.production_run_id}}
+        </div>
+    </a>
+</div>
+<div>
+    <a class="button" [routerLink]="['/prun-add']">Add prun</a>
+</div>

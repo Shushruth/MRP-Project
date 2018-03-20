@@ -1,0 +1,12 @@
+
+<div  [hidden]="showmfr">
+    <h3>Manufacturer: {{manufacturer.name}}   <button (click)="showmfr=true">EDIT</button> </h3>
+</div>
+<div [hidden]="!showmfr">
+    <h3>Manufacturer:<input [(ngModel)]="mfrName" placeholder="enter manufacturer"/>
+    <button (click)="showmfr=false">CANCEL</button>
+    <button (click)="updateManufacturerB(manufacturer)">UPDATE</button></h3>
+</div>
+<p>(ID: {{manufacturer.manufacturer_id}})</p>
+<a class="button" (click)='deleteButton(manufacturer)'>Delete</a>
+<p> TODO: Edit and delete functionality</p>

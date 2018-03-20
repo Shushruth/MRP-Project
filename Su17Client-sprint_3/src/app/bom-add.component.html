@@ -1,0 +1,14 @@
+
+  <div>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <label>Product_ID: </label>
+    <input [(ngModel)]="prdID" placeholder="enter product" />
+  </div>
+  <div>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <label>Version_ID: </label>
+    <input [(ngModel)]="verID" placeholder="enter version id" />
+  </div>
+  <p>&nbsp;&nbsp;&nbsp;</p>
+  <button (click)="cancelButton()">Cancel</button>
+  <button *ngIf="prdID && verID" (click)="saveButton()">Save</button>

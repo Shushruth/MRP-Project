@@ -1,0 +1,58 @@
+<h3>LineItems</h3>
+<div>
+<ul>
+    <li>LINEITEM_ID</li>
+    <li>PART_ID</li>
+    <li>QUANTITY</li>
+    <li>  </li>
+	  <li>PART DESCRIPTION</li>
+  </ul>
+  <ul>
+    <li>
+      <a *ngFor="let litem of lineitems" [routerLink]="['/lineitem_all', litem.line_item_id]">
+        <div>      {{litem.line_item_id}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+    <li>
+      &nbsp;&nbsp;
+    </li>
+    <li>
+      <a *ngFor="let litem of lineitems">         
+        <div>{{litem.part}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+    <li>
+      &nbsp;&nbsp;
+    </li>
+    <li>
+      <a *ngFor="let litem of lineitems">         
+        <div>{{litem.quantity}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+	<li>
+      &nbsp;&nbsp;
+    </li>
+	<li>
+      <a *ngFor="let prtv of parts">         
+        <div>{{prtv.description}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+	<li>
+      &nbsp;&nbsp;
+    </li>
+
+  </ul>
+   
+  
+</div>
+<div>
+  <a class="button" [routerLink]="['/bom_part_quantity']">Add LineItem</a>
+</div>
+
+
+
+

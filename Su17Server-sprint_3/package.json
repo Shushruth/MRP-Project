@@ -1,0 +1,32 @@
+{
+  "name": "su17server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A server to receive database requests and return data.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4910/Su17Server.git"
+  },
+  "author": "Sesha Sai Darapureddy, Shanmukha Dasari, Sai Ram Pinnapureddy, Shushruth Kasarla, Marc Funston, Perry Copus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4910/Su17Server/issues"
+  },
+  "homepage": "https://github.com/4910/Su17Server#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "http": "0.0.0",
+    "morgan": "^1.8.2",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "q": "^1.5.0"
+  }
+}

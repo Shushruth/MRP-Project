@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<h3> ProductionRun ID: {{prun.production_run_id}}</h3>
+
+
+
+<div  [hidden]="showme1">
+    <h4>Product: {{prun.product}}   <button (click)="showme1=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme1">
+    <h3>Product:<input [(ngModel)]="prd" placeholder="enter product id"/>
+    <button (click)="showme1=false">CANCEL</button>
+    <button (click)="updateProductB(prun)">UPDATE</button></h3>
+</div>
+
+<div  [hidden]="showme2">
+    <h4>Quantity: {{prun.quantity}}   <button (click)="showme2=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme2">
+    <h3>Quantity:<input [(ngModel)]="qty" placeholder="enter quantity"/>
+    <button (click)="showme2=false">CANCEL</button>
+    <button (click)="updateQuantityB(prun)">UPDATE</button></h3>
+</div>
+
+<div  [hidden]="showme3">
+    <h4>TargetStartDate: {{prun.targetStartDate}}   <button (click)="showme3=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme3">
+    <h3>TargetStartDate:<input [(ngModel)]="tsd" placeholder="enter target start date"/>
+    <button (click)="showme3=false">CANCEL</button>
+    <button (click)="updateTargetStartB(prun)">UPDATE</button></h3>
+</div>
+
+<div  [hidden]="showme4">
+    <h4>TargetCompleteDate: {{prun.targetCompleteDate}}   <button (click)="showme4=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme4">
+    <h3>TargetCompleteDate:<input [(ngModel)]="tcd" placeholder="enter target complete date"/>
+    <button (click)="showme4=false">CANCEL</button>
+    <button (click)="updateTargetCompleteB(prun)">UPDATE</button></h3>
+</div>
+
+<p>Status_id: {{prun.status_id}}</p>
+<a class="button" (click)="deleteButton(prun)">Delete</a>

@@ -1,0 +1,15 @@
+<h3>Add LineItem</h3>
+<div>
+    <label>bom </label>
+    <input [(ngModel)]="bom" placeholder="enter bom_id" />
+</div><br>
+<div>
+    <label>part </label>
+    <input [(ngModel)]="partID" placeholder="enter part_id" />
+</div><br>
+  <div>
+    <label>quantity: </label>
+    <input [(ngModel)]="qty" placeholder="enter quantity" />
+  </div><br>
+  <button (click)="cancelButton()">Cancel</button>
+  <button *ngIf="qty && partID && bom" (click)="saveButton()">Save</button>

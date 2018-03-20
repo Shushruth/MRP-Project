@@ -1,0 +1,21 @@
+<h3>LineItem: {{lineitem.line_item_id}}</h3>
+<div  [hidden]="showpart">
+    <p>Part ID: {{lineitem.part}}   <button (click)="showpart=true">EDIT</button></p>
+</div>
+<div [hidden]="!showpart">
+    <p>Part ID:<input [(ngModel)]="partID" placeholder="enter part id"/>
+    <button (click)="showpart=false">CANCEL</button>
+    <button (click)="updatePartB(lineitem)">UPDATE</button></p>
+</div>
+
+<div  [hidden]="showqty">
+    <p>Quantity: {{lineitem.quantity}}   <button (click)="showqty=true">EDIT</button></p>
+</div>
+<div [hidden]="!showqty">
+    <p>Quantity:<input [(ngModel)]="qty" placeholder="enter quantity"/>
+    <button (click)="showqty=false">CANCEL</button>
+    <button (click)="updateQuantityB(lineitem)">UPDATE</button></p>
+</div>
+
+
+<a class="button" (click)='deleteButton(lineitem)'>Delete</a>

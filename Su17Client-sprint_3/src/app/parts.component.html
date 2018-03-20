@@ -1,0 +1,11 @@
+<h3>Parts</h3>
+<div>
+  <a *ngFor="let part of parts" [routerLink]="['/part-description', part.part_id]">
+    <div class="part">
+      {{part.description}}
+    </div>
+  </a>
+</div>
+<div>
+  <a class="button" [routerLink]="['/part-add']">Add Part</a>
+</div>

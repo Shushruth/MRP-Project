@@ -1,0 +1,11 @@
+<h3>Manufacturers</h3>
+<div>
+  <a *ngFor="let mfr of manufacturers" [routerLink]="['/mfr-detail', mfr.manufacturer_id]">
+    <div class="manufacturer">
+      {{mfr.name}}
+    </div>
+  </a>
+</div>
+<div>
+  <a class="button" [routerLink]="['/mfr-add']">Add Manufacturer</a>
+</div>

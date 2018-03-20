@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app ="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Parts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="myctrl">
+            <form>
+                Description:<input type="text" ng-model="Description"></br>
+                Value:<input type="text" ng-model="Value"></br>
+                Units:<input type="text" ng-model="Units"></br>
+                Manufacturer Part No:<input type="text" ng-model="MfrPartNumber"></br>
+                Manufacturer Name:<input type="text" ng-model="Manufacturer"></br>
+                Standard Cost:<input type="text" ng-model="StandardCost"></br>
+                Standard Lead Time:<input type="text" ng-model="StandardLeadTime"></br>
+                Qty. on hand:<input type="text" ng-model="QuantityOnHand"></br>
+            </form>
+            
+        <button ng-click="part.json">SEARCH</button>
+        <script>
+                var app = angular.module('myApp', []);
+                app.controller('myCtrl', function($scope, $http) {
+                $http.get("part.json")
+                .then(function(response) {
+                $scope.Description = response.description;
+                $scope.Value = response.value;
+                $scope.Units = response.units;
+                $scope.MfrPartNumber = response.mfrPartNumber;
+                $scope.Manufacturer = response.manufacturer;
+                $scope.StandardCost = response.standardCost;
+                $scope.StandardLeadTime = response.standardLeadTime;
+                $scope.QuantityOnHand = response.quantityOnHand;
+                }, function(response){
+
+                $scope.content = "Something went wrong";
+                         });
+                });
+</script>   
+    </body>
+<script>
+

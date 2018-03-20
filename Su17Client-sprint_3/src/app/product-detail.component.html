@@ -1,0 +1,30 @@
+<h3>{{product.productName}}</h3>
+
+<div  [hidden]="showme1">
+    <h4>Name: {{product.productName}}   <button (click)="showme1=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme1">
+    <h3>Name:<input [(ngModel)]="prdName" placeholder="enter product name"/>
+    <button (click)="showme1=false">CANCEL</button>
+    <button (click)="updateNameB(product)">UPDATE</button></h3>
+</div>
+
+<div  [hidden]="showme2">
+    <h4>Designation: {{product.productDesignation}}   <button (click)="showme2=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme2">
+    <h3>Designation:<input [(ngModel)]="prdDes" placeholder="enter product designation"/>
+    <button (click)="showme2=false">CANCEL</button>
+    <button (click)="updateDesignationB(product)">UPDATE</button></h3>
+</div>
+
+<div  [hidden]="showme3">
+    <h4>standardSalesPrice: {{product.standardSalesPrice}}   <button (click)="showme3=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme3">
+    <h3>standardSalesPrice:<input [(ngModel)]="sp" placeholder="enter standard sales price"/>
+    <button (click)="showme3=false">CANCEL</button>
+    <button (click)="updateSpB(product)">UPDATE</button></h3>
+</div>
+
+<a class="button" (click)='deleteButton(product)'>Delete</a>

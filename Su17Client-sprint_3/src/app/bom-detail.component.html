@@ -1,0 +1,30 @@
+<h3>BOM ID: {{billofmaterials.bom_id}}</h3>
+
+
+
+<div  [hidden]="showme">
+    <h4>PRODUCT: {{billofmaterials.product}}   <button (click)="showme=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showme">
+    <h3>PRODUCT:<input [(ngModel)]="prdID" placeholder="enter product"/>
+    <button (click)="showme=false">CANCEL</button>
+    <button (click)="updateProductB(billofmaterials)">UPDATE</button></h3>
+</div>
+
+
+<div  [hidden]="showver">
+    <h4>VERSION_ID: {{billofmaterials.version_id}}   <button (click)="showver=true">EDIT</button> </h4>
+</div>
+<div [hidden]="!showver">
+    <h3>VERSION_ID:<input [(ngModel)]="verID" placeholder="enter version id"/>
+    <button (click)="showver=false">CANCEL</button>
+    <button (click)="updateVersionB(billofmaterials)">UPDATE</button></h3>
+</div>
+
+
+<a [routerLink]="['/lineitems', billofmaterials.bom_id]"  >Lineitems</a>
+<p>&nbsp;</p>
+
+
+<a class="button" (click)='deleteButton(billofmaterials)'>Delete</a>
+

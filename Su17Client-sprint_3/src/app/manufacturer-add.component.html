@@ -1,0 +1,7 @@
+<h3>Add Manufacturer</h3>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="mfrName" placeholder="enter name" />
+  </div>
+  <button (click)="cancelButton()">Cancel</button>
+  <button *ngIf="mfrName" (click)="saveButton()">Save</button>

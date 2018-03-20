@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Parts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <div ng-app="my app" ng-controller="myCtrl">
+
+        <form>
+            product:<button type="button" class="btn btn-primary" onclick="window.location = 'product.html' ">enter</button>
+
+            </br>
+            </br>
+            quantity:
+            <input type="int" ng-model="quantity">
+            </br>
+            targetStartDate:
+            <input type="date" ng-model="targetStartDate">
+            </br>
+            targetCompleteDate:
+            <input type="date" ng-model="targetCompleteDate">
+            </br>
+            status:
+            <input type="RunStatus" ng-model="status">
+            </br>
+        </form>
+    </div>
+    <button ng-click="run.json">SEARCH</button>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+
+            $http.get("run.json")
+                .then(function(response) {
+
+                        $scope.product = response.product;
+                        $scope.quantity = response.quantity;
+                        $scope.targetStartDate = response.targetStartDate;
+                        $scope.targetCompleteDate = response.targetCompleteDate;
+                        $scope.status = response.status;
+                    },
+
+                    function(response) {
+                        $scope.content = "Something went wrong";
+                    });
+        });
+    </script>
+</body>
+
+</html>

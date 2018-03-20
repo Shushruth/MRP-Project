@@ -1,0 +1,40 @@
+<h3>BillofMaterials</h3>
+
+<div>
+  <ul>
+    <li>BOM_ID</li>
+    <li>PRODUCT_ID</li>
+    <li>VERSION_ID</li>
+  </ul>
+  <ul>
+    <li>
+      <a *ngFor="let bom of billofmaterials" [routerLink]="['/bom_id_all', bom.bom_id]">
+        <div>{{bom.bom_id}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+    <li>
+      &nbsp;&nbsp;
+    </li>
+    <li>
+      <a *ngFor="let bom of billofmaterials">         
+        <div>{{bom.product}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+    <li>
+      &nbsp;&nbsp;
+    </li>
+    <li>
+      <a *ngFor="let bom of billofmaterials">         
+        <div>{{bom.version_id}}</div>
+        <p>&nbsp;&nbsp;</p>
+      </a>
+    </li>
+  </ul>
+   
+</div>
+
+<div>
+  <a class="button" [routerLink]="['/insert_product']">Add BOM</a>
+</div>

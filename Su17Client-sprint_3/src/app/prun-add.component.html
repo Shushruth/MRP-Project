@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<h3>ProductRun</h3>
+
+<div>
+    <label>product </label>
+    <input [(ngModel)]="product" placeholder="enter product" />
+</div>
+
+<button (click)="cancelButton()">Cancel</button>
+<button *ngIf="product" (click)="saveButton()">Save</button>

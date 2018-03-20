@@ -1,0 +1,11 @@
+<h3>Products</h3>
+<div>
+  <a *ngFor="let product of products" [routerLink]="['/product-detail', product.product_id]">
+    <div class="product">
+      {{product.productName}}
+    </div>
+  </a>
+</div>
+<div>
+  <a class="button" [routerLink]="['/product-add']">Add Product</a>
+</div>

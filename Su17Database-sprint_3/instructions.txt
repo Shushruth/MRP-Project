@@ -1,0 +1,8 @@
+Using XAMPP control panel, start Apache and MySQL.
+Open phpMyAdmin by clicking Admin on the MySQL line.
+Click SQL tab at the top of ther admin panel.
+
+Open the file schema.sql, select and copy all text, paste into the SQL box, and clkick "go."
+Do the same for the datafill.sql file if you want the started data fill.
+
+That's it!

@@ -1,0 +1,16 @@
+<h3>Add Product</h3>
+  
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="productName" placeholder="enter name" />
+  </div>
+  <div>
+    <label>standardSalesPrice: </label>
+    <input [(ngModel)]="standardSalesPrice" placeholder="enter standardSalesPrice" />
+  </div>
+  <div>
+    <label>productDesignation: </label>
+    <input [(ngModel)]="productDesignation" placeholder="enter designation" />
+  </div>
+  <button (click)="cancelButton()">Cancel</button>
+  <button *ngIf="standardSalesPrice" (click)="saveButton()">Save</button>

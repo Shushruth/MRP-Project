@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Parts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="my app" ng-controller="myCtrl">
+        <form>
+            productDesignation:
+            <input type="desidnation of product" ng-model="productDesignation">
+            </br>
+            productName:
+            <input type="text" ng-model="productName">
+            </br>
+            standardSalesPrice:
+            <input type="double" ng-model="standardSalesPrice">
+            </br>
+        </form>
+        <button type="button" button="savePD(PD)" class="btn btn-primary" onclick="window.location = 'run.html' "> enter </button>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http) {
+                $http.get("product.json")
+                    .then(function(response) {
+                        $scope.productDesignation = response.productDesignation;
+                        $scope.productName = response.productName;
+                        $scope.standardSalesPrice = response.standardSalesPrice;
+
+                    }, function(response) {
+                        $scope.content = "Something went wrong";
+                    });
+            });
+        </script>
+</body>
+
+</html>

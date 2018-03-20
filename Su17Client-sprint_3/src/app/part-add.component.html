@@ -1,0 +1,7 @@
+<h3>Add Part</h3>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="partName" placeholder="enter name" />
+  </div>
+  <button (click)="cancelButton()">Cancel</button>
+  <button *ngIf="partName" (click)="saveButton()">Save</button>
